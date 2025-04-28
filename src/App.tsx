@@ -1,18 +1,22 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { StandingsProvider } from './contexts/StandingsContext';
 import Drivers from './pages/Drivers';
 import DriverDetails from './pages/DriverDetails';
-import { DriversProvider } from './contexts/DriversContext';
+import Constructors from './pages/Constructors';
+import ConstructorDetails from './pages/ConstructorDetails';
 
 function App() {
   return (
-    <DriversProvider>
+    <StandingsProvider>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Drivers />} />
           <Route path="/drivers/:driverId" element={<DriverDetails />} />
+          <Route path="/constructors" element={<Constructors />} />
+          <Route path="/constructors/:constructorId" element={<ConstructorDetails />} />
         </Routes>
       </BrowserRouter>
-    </DriversProvider>
+    </StandingsProvider>
   );
 }
 

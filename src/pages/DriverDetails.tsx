@@ -1,23 +1,31 @@
-import { useParams } from 'react-router-dom';
-import { useDrivers } from '../contexts/DriversContext';
+import { useParams, Link } from 'react-router-dom';
+import { useStandings } from '../contexts/StandingsContext';
 
 function DriverDetails() {
   const { driverId } = useParams<{ driverId: string }>();
-  const { drivers, loading } = useDrivers();
+  const { drivers, loading } = useStandings();
 
-  if (loading) return <div>Loading...</div>;
+  if (loading) {
+    return <div>Loading driver details...</div>;
+  }
 
   const driver = drivers.find((d) => d.id === driverId);
 
-  if (!driver) return <div>Driver not found</div>;
+  if (!driver) {
+    return <div>Driver not found.</div>;
+  }
 
   return (
-    <div>
+    <div className="DriverDetailsPage">
       <h1>{driver.fullName}</h1>
       <p><strong>Nationality:</strong> {driver.nationality}</p>
-      <p><strong>Birth Date:</strong> {driver.birthDate}</p>
-      <p><strong>Code:</strong> {driver.code}</p>
-      <p><strong>Wikipedia:</strong> <a href={driver.wikiUrl} target="_blank" rel="noreferrer">View</a></p>
+      <p><strong>Date of Birth:</strong> {driver.dateOfBirth}</p>
+      <p><strong>Team:</strong> <Link to={`/constructors/${driver.teamId}`}>{driver.teamName}</Link></p>
+      <p><strong>Points:</strong> {driver.points}</p>
+      <p><strong>Wins:</strong> {driver.wins}</p>
+      <p><strong>Season Position:</strong> {driver.position}</p>
+
+      <button><Link to="/">Back</Link></button>
     </div>
   );
 }

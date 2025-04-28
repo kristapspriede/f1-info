@@ -2,7 +2,7 @@
   "name": "f1-info",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://api.jolpi.ca",
+  "proxy": "https://api.jolpi.ca",
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
