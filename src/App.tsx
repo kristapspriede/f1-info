@@ -1,15 +1,15 @@
-import React from 'react';
-import './App.scss';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Drivers from './pages/Drivers';
+import DriverDetails from './pages/DriverDetails';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          This is F1-Info, a simple app to get information about F1 drivers and teams.
-        </p>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Drivers />} />
+        <Route path="/drivers/:driverId" element={<DriverDetails />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
