@@ -1,17 +1,13 @@
-import { useEffect, useState } from 'react';
-import { getDrivers } from '../api/openf1';
-import { Driver } from '../api/mappers/driverMapper';
+import { useDrivers } from '../contexts/DriversContext';
 import { Link } from 'react-router-dom';
 
 function Drivers() {
-  const [drivers, setDrivers] = useState<Driver[]>([]);
+  const { drivers, loading } = useDrivers();
 
-  useEffect(() => {
-    getDrivers().then(setDrivers);
-  }, []);
+  if (loading) return <div>Loading...</div>;
 
   return (
-    <div className="DriversPage">
+    <div>
       <h1>Drivers 2025</h1>
       <ul>
         {drivers.map((driver) => (
