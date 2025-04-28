@@ -18,6 +18,13 @@ function DriverDetails() {
   return (
     <div className="DriverDetailsPage">
       <h1>{driver.fullName}</h1>
+
+      <img
+        src={`https://media.formula1.com/image/upload/f_auto,c_limit,q_auto,w_1320/content/dam/fom-website/drivers/2025Drivers/${driver.familyName}`}
+        alt={driver.fullName}
+        style={{ maxWidth: '300px', height: 'auto', marginBottom: '1rem' }}
+      />
+
       <p><strong>Nationality:</strong> {driver.nationality}</p>
       <p><strong>Date of Birth:</strong> {driver.dateOfBirth}</p>
       <p><strong>Team:</strong> <Link to={`/constructors/${driver.teamId}`}>{driver.teamName}</Link></p>

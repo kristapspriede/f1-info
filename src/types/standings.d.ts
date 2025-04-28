@@ -1,6 +1,8 @@
 export interface Driver {
     id: string;
     fullName: string;
+    givenName: string;
+    familyName: string;
     nationality: string;
     dateOfBirth: string;
     teamId: string;
