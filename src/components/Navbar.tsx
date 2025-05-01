@@ -6,6 +6,7 @@ function Navbar() {
     <nav className="navbar">
       <div className="navbar-brand titillium-web-regular">F1 Info</div>
       <div className="navbar-links">
+        <Link to="/races">Races</Link>
         <Link to="/">Drivers</Link>
         <Link to="/constructors">Constructors</Link>
       </div>

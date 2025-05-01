@@ -1,0 +1,28 @@
+.racesPage {
+    h1 {
+        margin-bottom: 1rem;
+    }
+
+    .raceList {
+        list-style: none;
+        padding: 0;
+    }
+
+    .raceListItem {
+        margin-bottom: 1rem;
+        padding: 1rem;
+        background-color: #f3f3f3;
+        border-radius: 8px;
+        transition: background 0.2s;
+
+        a {
+            text-decoration: none;
+            color: #222;
+            font-weight: 500;
+
+            &:hover {
+                color: #d00;
+            }
+        }
+    }
+}
