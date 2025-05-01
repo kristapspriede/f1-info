@@ -5,6 +5,7 @@ export interface Driver {
     familyName: string;
     nationality: string;
     dateOfBirth: string;
+    number: string;
     teamId: string;
     teamName: string;
     points: number;

@@ -33,6 +33,7 @@ export async function fetchStandings(): Promise<{ drivers: Driver[]; constructor
             familyName: item.Driver.familyName,
             nationality: item.Driver.nationality,
             dateOfBirth: item.Driver.dateOfBirth,
+            number: item.Driver.permanentNumber,
             teamId: latestConstructor.constructorId,
             teamName: latestConstructor.name,
             points: Number(item.points),
